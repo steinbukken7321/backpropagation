@@ -1,3 +1,5 @@
+<code style="color : red">Created by Karine Fernandes and Rafael Ziani de Carvalho</code>
+
 
 
 # A Step by Step Backpropagation Example
@@ -14,13 +16,6 @@ Here’s the basic structure:
 
 
 # 🚧 Under construction 🚧
-
-
-
-Created by Karine Fernandes and Rafael Ziani de Carvalho.
-
-![badge](https://img.shields.io/github/followers/steinbukken7321.svg?style=social&label=Follow&maxAge=2592000)
-![badge](https://img.shields.io/github/followers/KaFernandes02.svg?style=social&label=Follow&maxAge=2592000)
 
 
 
