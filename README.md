@@ -30,13 +30,17 @@ created by Karine Fernandes and Rafael Ziani de Carvalho.
 
 ---
 # Contato
+- Karine Fernandes
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-7FFF00?style=for-the-badge&logo=linkedin&logoColor=000000)](https://www.linkedin.com/in/rafael-ziani-de-carvalho-a4546723a/)
 [![Gmail](https://img.shields.io/badge/Gmail-7FFF00?style=for-the-badge&logo=gmail&logoColor=000000)](mailto:Rafael.ziani1@gmail.com)
 
+- Rafael Ziani de Carvalho
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-7FFF00?style=for-the-badge&logo=linkedin&logoColor=000000)](https://www.linkedin.com/in/rafael-ziani-de-carvalho-a4546723a/)
 [![Gmail](https://img.shields.io/badge/Gmail-7FFF00?style=for-the-badge&logo=gmail&logoColor=000000)](mailto:Rafael.ziani1@gmail.com)
 
-
+- Karine Fernandes
 ![steinbukken7321 GitHub stats](https://github-readme-stats.vercel.app/api?username=steinbukken7321&theme=chartreuse-dark&show_icons=true)
+
+- Rafael Ziani de Carvalho
 ![steinbukken7321 GitHub stats](https://github-readme-stats.vercel.app/api?username=steinbukken7321&theme=chartreuse-dark&show_icons=true)
 
