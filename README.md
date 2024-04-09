@@ -4,7 +4,13 @@
 
 For this code, we’re going to use a neural network with two inputs, two hidden neurons, two
 output neurons. Additionally, the hidden and output neurons will include a bias.
+
+Here’s the basic structure:
+![image](https://github.com/steinbukken7321/backpropagation/assets/83385968/2f0c32e2-0a95-455c-a7a2-a5fc3874aed9)
+
 # ...
+
+
 
 # 🚧 Under construction 🚧
 
