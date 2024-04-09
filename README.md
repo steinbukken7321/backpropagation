@@ -1,13 +1,23 @@
 
 # 🚧 Projeto em construção 🚧
 
+# A Step by Step Backpropagation Example
+
+For this tutorial, we’re going to use a neural network with two inputs, two hidden neurons, two
+output neurons. Additionally, the hidden and output neurons will include a bias.
+
+
+
+
+
+
 
 
 
 ![Badge](https://img.shields.io/badge/About-me-%7FFF00?style=for-the-badge&logo=gray)
 
 
-Criado por Rafael Ziani de Carvalho, atualmente cursando engenharia de telecomunicações pela UFSM.
+created by Rafael Ziani de Carvalho.
 
 
 
@@ -18,7 +28,6 @@ Criado por Rafael Ziani de Carvalho, atualmente cursando engenharia de telecomun
 # Habilidades e Ferramentas
 ![Python](https://img.shields.io/badge/python-7FFF00?style=for-the-badge&logo=python&logoColor=000000) 
 ![C](https://img.shields.io/badge/C-7FFF00?style=for-the-badge&logo=c&logoColor=000000)
-![R](https://img.shields.io/badge/R-7FFF00?style=for-the-badge&logo=r&logoColor=000000)
 ![Git](https://img.shields.io/badge/GIT-7FFF00?style=for-the-badge&logo=git&logoColor=000000)
 ![Vscode](https://img.shields.io/badge/Vscode-7FFF00?style=for-the-badge&logo=visual-studio-code&logoColor=000000)
 
