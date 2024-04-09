@@ -6,8 +6,7 @@ class Neuron:
         self.bias = bias
 
     def calculate_output(self, inputs):
-        total_net_input = sum(
-            w * x for w, x in zip(self.weights, inputs)) + self.bias
+        total_net_input = sum(w * x for w, x in zip(self.weights, inputs)) + self.bias
         return 1 / (1 + math.exp(-total_net_input))
 
 
