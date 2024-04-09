@@ -271,7 +271,8 @@ def get_output_before_training(self, inputs):
 NeuralNetwork.get_output_before_training = get_output_before_training
 
 # Creating an instance of the neural network
-nn = NeuralNetwork(2, 2, 2, hidden_layer_weights=[0.15, 0.2, 0.25, 0.3], hidden_layer_bias=0.35, output_layer_weights=[0.4, 0.45, 0.5, 0.55], output_layer_bias=0.6)
+nn = NeuralNetwork(2, 2, 2, hidden_layer_weights=[0.15, 0.2, 0.25, 0.3], 
+                   hidden_layer_bias=0.35, output_layer_weights=[0.4, 0.45, 0.5, 0.55], output_layer_bias=0.6)
 
 # Getting the outputs before training
 o1, o2 = nn.get_output_before_training([0.05, 0.1])
