@@ -36,9 +36,10 @@ Created by Karine Fernandes and Rafael Ziani de Carvalho.
 
 - Rafael Ziani de Carvalho
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-000080?style=for-the-badge&logo=linkedin&logoColor=100000)](https://www.linkedin.com/in/rafael-ziani-de-carvalho-a4546723a/)
-[![Gmail](https://img.shields.io/badge/Gmail-000080?style=for-the-badge&logo=gmail&logoColor=100000)](mailto:Rafael.ziani1@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-000080?style=for-the-badge&logo=linkedin&logoColor=000000)](https://www.linkedin.com/in/rafael-ziani-de-carvalho-a4546723a/)
+[![Gmail](https://img.shields.io/badge/Gmail-000080?style=for-the-badge&logo=gmail&logoColor=000000)](mailto:Rafael.ziani1@gmail.com)
 
+# Status
 - Karine Fernandes
 
 ![steinbukken7321 GitHub stats](https://github-readme-stats.vercel.app/api?username=steinbukken7321&theme=chartreuse-dark&show_icons=true)
