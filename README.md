@@ -2,7 +2,7 @@
 
 # A Step by Step Backpropagation Example
 
-For this tutorial, we’re going to use a neural network with two inputs, two hidden neurons, two
+For this code, we’re going to use a neural network with two inputs, two hidden neurons, two
 output neurons. Additionally, the hidden and output neurons will include a bias.
 # ...
 
@@ -17,15 +17,12 @@ output neurons. Additionally, the hidden and output neurons will include a bias.
 ![Badge](https://img.shields.io/badge/About-me-%7FFF00?style=for-the-badge&logo=gray)
 
 
-created by Rafael Ziani de Carvalho.
+created by Karine Fernandes and Rafael Ziani de Carvalho.
 
 
 
-[![Instagram](https://img.shields.io/badge/-Instagram-%7FFF00?style=for-the-badge&logo=instagram&logoColor=000000)](https://www.instagram.com/rafael_zcarvalho/)
 
-
-
-# Habilidades e Ferramentas
+# Languages ​​used
 ![Python](https://img.shields.io/badge/python-7FFF00?style=for-the-badge&logo=python&logoColor=000000) 
 ![C](https://img.shields.io/badge/C-7FFF00?style=for-the-badge&logo=c&logoColor=000000)
 ![Git](https://img.shields.io/badge/GIT-7FFF00?style=for-the-badge&logo=git&logoColor=000000)
@@ -36,6 +33,10 @@ created by Rafael Ziani de Carvalho.
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-7FFF00?style=for-the-badge&logo=linkedin&logoColor=000000)](https://www.linkedin.com/in/rafael-ziani-de-carvalho-a4546723a/)
 [![Gmail](https://img.shields.io/badge/Gmail-7FFF00?style=for-the-badge&logo=gmail&logoColor=000000)](mailto:Rafael.ziani1@gmail.com)
 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-7FFF00?style=for-the-badge&logo=linkedin&logoColor=000000)](https://www.linkedin.com/in/rafael-ziani-de-carvalho-a4546723a/)
+[![Gmail](https://img.shields.io/badge/Gmail-7FFF00?style=for-the-badge&logo=gmail&logoColor=000000)](mailto:Rafael.ziani1@gmail.com)
 
+
+![steinbukken7321 GitHub stats](https://github-readme-stats.vercel.app/api?username=steinbukken7321&theme=chartreuse-dark&show_icons=true)
 ![steinbukken7321 GitHub stats](https://github-readme-stats.vercel.app/api?username=steinbukken7321&theme=chartreuse-dark&show_icons=true)
 
