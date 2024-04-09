@@ -17,15 +17,10 @@ Here’s the basic structure:
 
 
 
-
-
-
-
-![Badge](https://img.shields.io/badge/About-me-%7FFF00?style=for-the-badge&logo=gray)
-
-
 Created by Karine Fernandes and Rafael Ziani de Carvalho.
 
+![badge](https://img.shields.io/github/followers/steinbukken7321.svg?style=social&label=Follow&maxAge=2592000)
+![badge](https://img.shields.io/github/followers/steinbukken7321.svg?style=social&label=Follow&maxAge=2592000)
 
 
 
