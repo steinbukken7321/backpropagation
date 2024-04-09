@@ -20,7 +20,7 @@ Here’s the basic structure:
 Created by Karine Fernandes and Rafael Ziani de Carvalho.
 
 ![badge](https://img.shields.io/github/followers/steinbukken7321.svg?style=social&label=Follow&maxAge=2592000)
-![badge](https://img.shields.io/github/followers/steinbukken7321.svg?style=social&label=Follow&maxAge=2592000)
+![badge](https://img.shields.io/github/followers/KaFernandes02.svg?style=social&label=Follow&maxAge=2592000)
 
 
 
@@ -44,7 +44,7 @@ Created by Karine Fernandes and Rafael Ziani de Carvalho.
 # Status
 - Karine Fernandes
 
-![steinbukken7321 GitHub stats](https://github-readme-stats.vercel.app/api?username=steinbukken7321&theme=chartreuse-dark&show_icons=true)
+![steinbukken7321 GitHub stats](https://github-readme-stats.vercel.app/api?username=KaFernandes02&theme=chartreuse-dark&show_icons=true)
 
 - Rafael Ziani de Carvalho
 
