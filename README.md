@@ -21,7 +21,6 @@ Here’s the basic structure:
 
 # languages ​​and tools used
 ![Python](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
-![C](	https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
 ![Vscode](https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
 ![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
 ---
