@@ -1,6 +1,5 @@
 import math
 
-
 # Definição dos pesos e viés para a camada oculta e de saída
 hidden_weights = [0.15, 0.20, 0.25, 0.30]
 output_weights_o1 = [0.40, 0.45]
