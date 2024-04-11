@@ -1,7 +1,7 @@
 import math
 
 class Neuron:
-    def __init__(self, weights, bias):
+    def init(self, weights, bias):
         self.weights = weights
         self.bias = bias
 
