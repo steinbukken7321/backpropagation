@@ -9,12 +9,15 @@ Uma rede neural típica é composta por uma camada de entrada, uma ou mais camad
 
 As redes neurais têm sido amplamente utilizadas em uma variedade de aplicações, incluindo reconhecimento de padrões, processamento de linguagem natural, visão computacional e muitas outras áreas de aprendizado de máquina e inteligência artificial.
 
+![image](https://github.com/steinbukken7321/backpropagation/assets/83385968/f1414cdf-85a4-4891-b17a-45b03d70f50d)
+
 ### Backpropagation
 Backpropagation é um algoritmo fundamental usado para treinar redes neurais artificiais. Ele permite que a rede neural aprenda a partir dos dados, ajustando os pesos das conexões entre os neurônios para minimizar o erro entre as previsões da rede e os valores reais dos dados de treinamento.
 
 O processo de backpropagation envolve duas etapas principais: feedforward e retropropagação. Na etapa de feedforward, os dados são propagados pela rede neural, passando pelas diferentes camadas de neurônios, até que uma saída seja gerada. Em seguida, durante a etapa de retropropagação, o erro é calculado e propagado de volta pela rede, permitindo que os pesos das conexões sejam ajustados de acordo com a magnitude do erro.
 
-![image](https://github.com/steinbukken7321/backpropagation/assets/83385968/f1414cdf-85a4-4891-b17a-45b03d70f50d)
+![image](https://github.com/steinbukken7321/backpropagation/assets/83385968/8cb303b7-5a13-4176-aab0-ef35ad6f6518)
+
 
 
 # Exemplo de Backpropagation em uma Rede Neural
