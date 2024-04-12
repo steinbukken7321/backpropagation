@@ -1,5 +1,5 @@
 
-# Título do Projeto
+# Formulating a neural network with backpropagation from scratch
 
 ## A Step by Step Backpropagation Example by Matt Mazur
 
