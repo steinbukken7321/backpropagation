@@ -1,6 +1,6 @@
 # Implementação de uma Rede Neural com Retropropagação do Zero
 
-## Introdução as Redes Neuras e ao Backpropagation
+## Introdução as Redes Neurais e ao Backpropagation
 
 ### Redes Neurais
 As redes neurais são modelos computacionais inspirados no funcionamento do cérebro humano. Elas consistem em neurônios interconectados organizados em camadas, onde cada neurônio recebe entradas, realiza um cálculo ponderado e produz uma saída.
