@@ -1,6 +1,3 @@
-
-
-
 # Implementação de uma Rede Neural com Retropropagação do Zero
 
 
@@ -8,7 +5,7 @@
 
 # Exemplo de Retropropagação em uma Rede Neural
 
-Este é um exemplo simples de como a retropropagação funciona em uma rede neural de uma única camada oculta e uma única saída.
+Este é um exemplo simples de como a retropropagação funciona em uma rede neural, há duas entradas, utiliza de duas camadas ocultas e possui duas saídas.
 
 ## Sobre
 
