@@ -1,5 +1,6 @@
 # Implementação de uma Rede Neural com Retropropagação do Zero
 
+![image](https://github.com/steinbukken7321/backpropagation/assets/83385968/f1414cdf-85a4-4891-b17a-45b03d70f50d)
 
 
 
@@ -7,6 +8,7 @@
 
 Este é um exemplo simples de como a retropropagação funciona em uma rede neural, no projeto, vamos usar uma rede neural com duas entradas, dois neurônios ocultos e dois neurônios de saída. Além disso, os neurônios ocultos e de saída incluirão um viés.
 
+![image](https://github.com/steinbukken7321/backpropagation/assets/83385968/55024fac-4613-47d2-bba0-566b82797fbc)
 
 ## Sobre
 
