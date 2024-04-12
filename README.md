@@ -17,15 +17,15 @@ O processo de backpropagation envolve duas etapas principais: feedforward e retr
 ![image](https://github.com/steinbukken7321/backpropagation/assets/83385968/f1414cdf-85a4-4891-b17a-45b03d70f50d)
 
 
-# Exemplo de Retropropagação em uma Rede Neural
+# Exemplo de Backpropagation em uma Rede Neural
 
-Este é um exemplo simples de como a retropropagação funciona em uma rede neural, no projeto, vamos usar uma rede neural com duas entradas, dois neurônios ocultos e dois neurônios de saída. Além disso, os neurônios ocultos e de saída incluirão um viés.
+Este é um exemplo simples de como o Backpropagation funciona em uma rede neural, no projeto, vamos usar uma rede neural com duas entradas, dois neurônios ocultos e dois neurônios de saída. Além disso, os neurônios ocultos e de saída incluirão um viés.
 
 ![image](https://github.com/steinbukken7321/backpropagation/assets/83385968/55024fac-4613-47d2-bba0-566b82797fbc)
 
 ## Sobre
 
-Este projeto é baseado no tutorial de Matt Mazur sobre [Backpropagation](https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/). O método implementado aqui segue os passos detalhados no tutorial para treinar redes neurais usando retropropagação.
+Este projeto é baseado no tutorial de Matt Mazur sobre [Backpropagation](https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/). O método implementado aqui segue os passos detalhados no tutorial para treinar redes neurais usando Backpropagation.
 
 ## Como funciona?
 
@@ -33,7 +33,7 @@ Este projeto é baseado no tutorial de Matt Mazur sobre [Backpropagation](https:
 
 2. **Cálculo do Erro**: A diferença entre a saída prevista e a saída desejada é calculada para determinar o erro.
 
-3. **Retropropagação**: Os gradientes são calculados para os pesos e os viéses usando a regra da cadeia.
+3. **Backpropagation**: Os gradientes são calculados para os pesos e os viéses usando a regra da cadeia.
 
 4. **Atualização de Pesos e Viéses**: Os pesos e os viéses são ajustados usando os gradientes e uma taxa de aprendizado.
 
