@@ -1,7 +1,10 @@
 
-# Formulating a neural network with backpropagation from scratch
 
-## A Step by Step Backpropagation Example by Matt Mazur
+
+# Implementação de uma Rede Neural com Retropropagação do Zero
+
+
+
 
 # Exemplo de Retropropagação em uma Rede Neural
 
