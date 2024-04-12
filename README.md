@@ -1,7 +1,20 @@
 # Implementação de uma Rede Neural com Retropropagação do Zero
 
-![image](https://github.com/steinbukken7321/backpropagation/assets/83385968/f1414cdf-85a4-4891-b17a-45b03d70f50d)
+## Introdução as Redes Neuras e ao Backpropagation
 
+### Redes Neurais
+As redes neurais são modelos computacionais inspirados no funcionamento do cérebro humano. Elas consistem em neurônios interconectados organizados em camadas, onde cada neurônio recebe entradas, realiza um cálculo ponderado e produz uma saída.
+
+Uma rede neural típica é composta por uma camada de entrada, uma ou mais camadas ocultas e uma camada de saída. As conexões entre os neurônios são representadas por pesos, que são ajustados durante o treinamento da rede para melhorar sua capacidade de fazer previsões ou classificações.
+
+As redes neurais têm sido amplamente utilizadas em uma variedade de aplicações, incluindo reconhecimento de padrões, processamento de linguagem natural, visão computacional e muitas outras áreas de aprendizado de máquina e inteligência artificial.
+
+### Backpropagation
+Backpropagation é um algoritmo fundamental usado para treinar redes neurais artificiais. Ele permite que a rede neural aprenda a partir dos dados, ajustando os pesos das conexões entre os neurônios para minimizar o erro entre as previsões da rede e os valores reais dos dados de treinamento.
+
+O processo de backpropagation envolve duas etapas principais: feedforward e retropropagação. Na etapa de feedforward, os dados são propagados pela rede neural, passando pelas diferentes camadas de neurônios, até que uma saída seja gerada. Em seguida, durante a etapa de retropropagação, o erro é calculado e propagado de volta pela rede, permitindo que os pesos das conexões sejam ajustados de acordo com a magnitude do erro.
+
+![image](https://github.com/steinbukken7321/backpropagation/assets/83385968/f1414cdf-85a4-4891-b17a-45b03d70f50d)
 
 
 # Exemplo de Retropropagação em uma Rede Neural
