@@ -3,12 +3,24 @@
 
 ## A Step by Step Backpropagation Example by Matt Mazur
 
-For this code, we’re going to use a neural network with two inputs, two hidden neurons, two
-output neurons. Additionally, the hidden and output neurons will include a bias.
+# Exemplo de Retropropagação em uma Rede Neural
 
-Here’s the basic structure:
+Este é um exemplo simples de como a retropropagação funciona em uma rede neural de uma única camada oculta e uma única saída.
 
-![image](https://github.com/steinbukken7321/backpropagation/assets/83385968/2f0c32e2-0a95-455c-a7a2-a5fc3874aed9)
+## Sobre
+
+Este projeto é baseado no tutorial de Matt Mazur sobre [Backpropagation](https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/). O método implementado aqui segue os passos detalhados no tutorial para treinar redes neurais usando retropropagação.
+
+## Como funciona?
+
+1. **Feedforward**: A entrada é alimentada pela rede neural, passando pela camada oculta até a saída é calculada.
+
+2. **Cálculo do Erro**: A diferença entre a saída prevista e a saída desejada é calculada para determinar o erro.
+
+3. **Retropropagação**: Os gradientes são calculados para os pesos e os viéses usando a regra da cadeia.
+
+4. **Atualização de Pesos e Viéses**: Os pesos e os viéses são ajustados usando os gradientes e uma taxa de aprendizado.
+
 
 ## languages ​​and tools used
 ![Python](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
