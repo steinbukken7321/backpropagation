@@ -67,7 +67,7 @@ Este projeto é baseado no tutorial de Matt Mazur sobre [Backpropagation](https:
 ## Status
 - Karine Fernandes
 
-![steinbukken7321 GitHub stats](https://github-readme-stats.vercel.app/api?username=KaFernandes02&theme=chartreuse-dark&show_icons=true)
+![KaFernandes02 GitHub stats](https://github-readme-stats.vercel.app/api?username=KaFernandes02&theme=chartreuse-dark&show_icons=true)
 
 - Rafael Ziani de Carvalho
 
