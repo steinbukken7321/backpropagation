@@ -61,13 +61,13 @@ print("Erro total da rede neural:", etotal)
 """
 
 # --------------------------------- Derivadas parciais--------------------------------
-# Calculando a derivada parcial de E_total em relação a w5 w6 w7 w8
+# calculando a derivada parcial de E_total em relação a w5 w6 w7 w8
 partial_E_total_w5 = (outo1 - target_o1) * outo1 * (1 - outo1) * outh1
 partial_E_total_w6 = (outo1 - target_o1) * outo1 * (1 - outo1) * outh2
 partial_E_total_w7 = (outo2 - target_o2) * outo2 * (1 - outo2) * outh1
 partial_E_total_w8 = (outo2 - target_o2) * outo2 * (1 - outo2) * outh2
 
-# Resultado da derivada parcial w5 w6 w7 w8
+# resultado da derivada parcial w5 w6 w7 w8
 """
 print("Derivada parcial de E_total em relação a w5:", partial_E_total_w5)
 print("Derivada parcial de E_total em relação a w6:", partial_E_total_w6)
