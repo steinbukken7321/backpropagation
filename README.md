@@ -54,7 +54,7 @@ Este projeto é baseado no tutorial de Matt Mazur sobre [Backpropagation](https:
 
 
 ## Contatos
-- Karine Fernandes
+- Karine Fernandes de Oliveira
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-7FFF00?style=for-the-badge&logo=linkedin&logoColor=000000)](https://www.linkedin.com/in/karine-fernandes-97377919b/)
 [![Gmail](https://img.shields.io/badge/Gmail-7FFF00?style=for-the-badge&logo=gmail&logoColor=000000)](mailto:karinefo02@hotmail.com)
