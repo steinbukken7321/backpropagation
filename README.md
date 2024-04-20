@@ -65,7 +65,7 @@ Este projeto é baseado no tutorial de Matt Mazur sobre [Backpropagation](https:
 [![Gmail](https://img.shields.io/badge/Gmail-000080?style=for-the-badge&logo=gmail&logoColor=000000)](mailto:Rafael.ziani1@gmail.com)
 
 ## Status
-- Karine Fernandes
+- Karine Fernandes de Oliveira
 
 ![KaFernandes02 GitHub stats](https://github-readme-stats.vercel.app/api?username=KaFernandes02&theme=chartreuse-dark&show_icons=true)
 
