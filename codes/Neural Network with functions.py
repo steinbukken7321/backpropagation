@@ -4,12 +4,12 @@ import torch.optim as optim
 
 # Definição da classe da rede neural
 class MinhaRedeNeural(nn.Module):
-    def __init__(self, input_size, hidden_size, pesos_oculta=None, pesos_saida=None, bias_oculta=None, bias_saida=None):
+    def __init__(self, input_size, hidden_size, output_size, pesos_oculta=None, pesos_saida=None, bias_oculta=None, bias_saida=None):
         super(MinhaRedeNeural, self).__init__()
         # Camada oculta
         self.camada_oculta = nn.Linear(input_size, hidden_size, bias=True)
         # Camada de saída
-        self.camada_saida = nn.Linear(hidden_size, 2, bias=True)
+        self.camada_saida = nn.Linear(hidden_size, output_size, bias=True)
         
         # Inicialização dos pesos manualmente, se fornecidos
         if pesos_oculta is not None:
@@ -32,7 +32,7 @@ class MinhaRedeNeural(nn.Module):
         return x
 
 # Função para treinar a rede neural
-def treinar_rede(modelo, entradas, saidas, epochs=100, lr=0.01):
+def treinar_rede(modelo, entradas, saidas, epochs=10000, lr=0.5):
     # Definição da função de perda (MSE Loss)
     criterion = nn.MSELoss()
     # Definição do otimizador (SGD - Gradiente Descendente Estocástico)
@@ -57,8 +57,8 @@ def treinar_rede(modelo, entradas, saidas, epochs=100, lr=0.01):
         # Atualiza os parâmetros do modelo
         optimizer.step()
         
-        # A cada 10 épocas, imprime informações sobre a perda e os valores de saída
-        if (epoch+1) % 10 == 0:
+        # A cada 100 épocas, imprime informações sobre a perda e os valores de saída
+        if (epoch+1) % 100 == 0:
             perda_saida1 = criterion(outputs[:, 0], saidas[:, 0])
             perda_saida2 = criterion(outputs[:, 1], saidas[:, 1])
             perda_total = loss.item()
@@ -83,6 +83,6 @@ if __name__ == "__main__":
     bias_saida = [0.6, 0.6]
     
     # Instanciando o modelo da rede neural
-    modelo = MinhaRedeNeural(input_size=2, hidden_size=2, pesos_oculta=pesos_oculta, pesos_saida=pesos_saida, bias_oculta=bias_oculta, bias_saida=bias_saida)
+    modelo = MinhaRedeNeural(input_size=2, hidden_size=2, output_size=2, pesos_oculta=pesos_oculta, pesos_saida=pesos_saida, bias_oculta=bias_oculta, bias_saida=bias_saida)
     # Treinando a rede neural
     treinar_rede(modelo, entradas, saidas)
