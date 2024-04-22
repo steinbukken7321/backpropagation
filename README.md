@@ -74,4 +74,4 @@ Este projeto é baseado no tutorial de Matt Mazur sobre [Backpropagation](https:
 ![steinbukken7321 GitHub stats](https://github-readme-stats.vercel.app/api?username=steinbukken7321&theme=tokyonight&show_icons=true)
 
 
-<code style="color : red">Created by Karine Fernandes and Rafael Ziani de Carvalho</code>
+<code style="color : red">Created by Karine Fernandes de Oliveira and Rafael Ziani de Carvalho</code>
