@@ -2,10 +2,16 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 
+# Resumo do Codigo:
+# este código utiliza o PyTorch para definir o critério de perda, 
+# criar um loop de treinamento para iterar sobre várias épocas e 
+# realizar a otimização dos parâmetros da rede neural usando o 
+# algoritmo SGD (gradiente descendente estocástico).
+
+
 # Definição da classe da rede neural
-
-
 class RedeNeural(nn.Module):
+    # Inicializador da classe
     def __init__(self, input_size, hidden_size, output_size, pesos_oculta=None,
                  pesos_saida=None, bias_oculta=None, bias_saida=None):
         super(RedeNeural, self).__init__()
@@ -57,6 +63,7 @@ def treinar_rede(modelo, entradas, saidas, epochs=1, lr=0.5):
     print(f'Perda 2 antes do treinamento: {loss_2:.8f}')
     print(f'Perda Total antes do treinamento: {perda_total:.8f}\n')
     
+    # Calcula o erro quadrático médio (MSE) 
     criterion = nn.MSELoss()
 
     # Loop de treinamento
