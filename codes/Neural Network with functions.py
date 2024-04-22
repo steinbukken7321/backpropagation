@@ -35,10 +35,7 @@ class RedeNeural(nn.Module):
         x = torch.sigmoid(self.camada_saida(x))
         return x
 
-# Função para treinar a rede neural
 
-
-# Função para treinar a rede neural
 # Função para treinar a rede neural
 def treinar_rede(modelo, entradas, saidas, epochs=1, lr=0.5):
     outputs_iniciais = modelo(entradas)
