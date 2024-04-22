@@ -58,7 +58,6 @@ class Camada_Neuronios:
         # retorna as saídas de todos os neurônios na camada
         return [neuronio.saida for neuronio in self.neuronios]
 
-
 class RedeNeural:
     def __init__(self, num_inputs, num_ocultos, num_outputs, LR, pesos_camada_oculta=None,
                  bias_camada_oculta=None, pesos_camada_saida=None, bias_camada_saida=None):
@@ -140,7 +139,6 @@ class RedeNeural:
             for o in range(len(saidas_treinamento)):
                 erro_total += self.camada_saida.neuronios[o].calcular_erro(saidas_treinamento[o])
         return erro_total
-
 
 # definindo rede neural
 rn = RedeNeural(num_inputs=2, num_ocultos=2, num_outputs=2, LR=0.5,

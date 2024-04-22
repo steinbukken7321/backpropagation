@@ -2,30 +2,30 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 
-# Definição da classe da rede neural
+# definição da classe da rede neural
 class RedeNeural(nn.Module):
     def __init__(self, input_size, hidden_size, output_size, pesos_oculta=None,
                  pesos_saida=None, bias_oculta=None, bias_saida=None):
         super(RedeNeural, self).__init__()
-        # Camada oculta
+        # camada oculta
         self.camada_oculta = nn.Linear(input_size, hidden_size, bias=True)
-        # Camada de saída
+        # camada de saída
         self.camada_saida = nn.Linear(hidden_size, output_size, bias=True)
 
-        # Inicialização dos pesos manualmente, se fornecidos
+        # inicialização dos pesos manualmente, se fornecidos
         if pesos_oculta is not None:
             self.camada_oculta.weight = nn.Parameter(
                 torch.tensor(pesos_oculta))
         if pesos_saida is not None:
             self.camada_saida.weight = nn.Parameter(torch.tensor(pesos_saida))
 
-        # Inicialização dos bias manualmente, se fornecidos
+        # inicialização dos bias manualmente, se fornecidos
         if bias_oculta is not None:
             self.camada_oculta.bias = nn.Parameter(torch.tensor(bias_oculta))
         if bias_saida is not None:
             self.camada_saida.bias = nn.Parameter(torch.tensor(bias_saida))
 
-    # Método para a passagem adiante (forward pass) da rede neural
+    # (forward pass)
     def forward(self, x):
         # Ativação da camada oculta (sigmoid)
         x = torch.sigmoid(self.camada_oculta(x))
@@ -33,7 +33,7 @@ class RedeNeural(nn.Module):
         x = torch.sigmoid(self.camada_saida(x))
         return x
 
-# Função para treinar a rede neural
+# função para treinar a rede neural
 def treinar_rede(modelo, entradas, saidas, epochs=10000, lr=0.5):
     outputs_iniciais = modelo(entradas)
     # Definindo a função de perda
@@ -43,13 +43,11 @@ def treinar_rede(modelo, entradas, saidas, epochs=10000, lr=0.5):
         perda_total = loss_1 + loss_2
         return perda_total, loss_1, loss_2
     
-    # Definição do otimizador (SGD - Gradiente Descendente Estocástico)
+    # definição do otimizador (SGD - Gradiente Descendente Estocástico)
     optimizer = optim.SGD(modelo.parameters(), lr=lr)
 
-    # Antes do treinamento: calcula a perda total
+    # antes do treinamento, calcula o erro total e imprime
     perda_total, loss_1, loss_2 = minha_funcao_perda(saidas, outputs_iniciais)
-    #for row in outputs_iniciais:
-    #    print(f'[{row[0]:.8f}, {row[1]:.8f}]')
     print(f'erro 1 antes do treinamento: {loss_1:.8f}')
     print(f'erro 2 antes do treinamento: {loss_2:.8f}')
     print(f'erro total antes do treinamento: {perda_total:.8f}\n')
@@ -58,18 +56,18 @@ def treinar_rede(modelo, entradas, saidas, epochs=10000, lr=0.5):
 
     # Loop de treinamento
     for epoch in range(epochs):
-        # Zera os gradientes dos parâmetros do modelo
+        # zera os gradientes dos parâmetros do modelo
         optimizer.zero_grad()
-        # Realiza a passagem adiante (forward pass)
+        # realiza a passagem adiante (forward pass)
         outputs = modelo(entradas)
-        # Calcula a perda total
+        # calcula o erro total
         loss = criterion(outputs, saidas)
-        # Realiza a retropropagação (backward pass)
+        # (backward pass)
         loss.backward()
-        # Atualiza os parâmetros do modelo
+        # atualiza os parâmetros do modelo
         optimizer.step()
 
-        # A cada x épocas, imprime informações sobre a perda e os valores de saída
+        # a cada x épocas, imprime informações sobre a perda e os valores de saída
         if (epoch+1) % 10000 == 0:
             perda_total = 1/2 * ((saidas[0, 0] - outputs[0, 0])**2 + (saidas[0, 1] - outputs[0, 1])**2)
             print(f'Época [{epoch+1}/{epochs}], erro total após treinamento: {perda_total:.9f}')
@@ -94,15 +92,15 @@ if __name__ == "__main__":
     bias_oculta = [0.35, 0.35]
     bias_saida = [0.6, 0.6]
 
-    # Instanciando o modelo da rede neural
+    # modelo da rede neural
     modelo = RedeNeural(input_size=2, hidden_size=2, output_size=2,
                         pesos_oculta=pesos_oculta, pesos_saida=pesos_saida,
                         bias_oculta=bias_oculta, bias_saida=bias_saida)
     
-    # Imprimindo as saídas o1 e o2 antes do treinamento
+    # imprimindo as saídas o1 e o2 antes do treinamento
     print("Saída 1 antes do treinamento:", format(modelo(entradas)[0, 0], '.8f'))
     print("Saída 2 antes do treinamento:", format(modelo(entradas)[0, 1], '.8f'))
 
-    # Treinando a rede neural
+    # treinando a rede neural
     treinar_rede(modelo, entradas, saidas)
 
