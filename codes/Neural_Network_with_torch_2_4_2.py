@@ -3,8 +3,6 @@ import torch.nn as nn
 import torch.optim as optim
 
 # definição da classe da rede neural
-
-
 class RedeNeural(nn.Module):
     def __init__(self, input_size, hidden_size, output_size, pesos_oculta=None,
                  pesos_saida=None, bias_oculta=None, bias_saida=None):
@@ -36,8 +34,6 @@ class RedeNeural(nn.Module):
         return x
 
 # função para treinar a rede neural
-
-
 def treinar_rede(modelo, entradas, saidas, epochs=10000, lr=0.5):
     outputs_iniciais = modelo(entradas)
     # Definindo a função de perda
@@ -105,16 +101,16 @@ if __name__ == "__main__":
     bias_oculta = [0.35, 0.35, 0.35, 0.35]
     bias_saida = [0.6, 0.6]
 
-    # modelo da rede neural
-    modelo = RedeNeural(input_size=2, hidden_size=4, output_size=2,
-                        pesos_oculta=pesos_oculta, pesos_saida=pesos_saida,
-                        bias_oculta=bias_oculta, bias_saida=bias_saida)
+# modelo da rede neural
+modelo = RedeNeural(input_size=2, hidden_size=4, output_size=2,
+                    pesos_oculta=pesos_oculta, pesos_saida=pesos_saida,
+                    bias_oculta=bias_oculta, bias_saida=bias_saida)
 
-    # imprimindo as saídas o1 e o2 antes do treinamento
-    print("Saída 1 antes do treinamento:",
-          format(modelo(entradas)[0, 0], '.8f'))
-    print("Saída 2 antes do treinamento:",
-          format(modelo(entradas)[0, 1], '.8f'))
+# imprimindo as saídas o1 e o2 antes do treinamento
+print("Saída 1 antes do treinamento:",
+        format(modelo(entradas)[0, 0], '.8f'))
+print("Saída 2 antes do treinamento:",
+        format(modelo(entradas)[0, 1], '.8f'))
 
-    # treinando a rede neural
-    treinar_rede(modelo, entradas, saidas)
+# treinando a rede neural
+treinar_rede(modelo, entradas, saidas)
