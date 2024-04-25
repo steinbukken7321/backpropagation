@@ -4,13 +4,13 @@ import math
 class RedeNeural:
     TAXA_APRENDIZAGEM = 0.5
 
-    def __init__(self, num_inputs, num_ocultas, num_saidas, viés_camada_oculta=None, viés_camada_saida=None):
+    def __init__(self, num_inputs, num_ocultas, num_saidas, camada_oculta=None, camada_saida=None):
         self.num_inputs = num_inputs
         self.num_ocultas = num_ocultas
         self.num_saidas = num_saidas
 
-        self.camada_oculta = CamadaNeuronios(num_ocultas, viés_camada_oculta)
-        self.camada_saida = CamadaNeuronios(num_saidas, viés_camada_saida)
+        self.camada_oculta = CamadaNeuronios(num_ocultas, camada_oculta)
+        self.camada_saida = CamadaNeuronios(num_saidas, camada_saida)
 
         self.inicializar_pesos_entrada_para_neuronios_camada_oculta()
         self.inicializar_pesos_neuronios_camada_oculta_para_neuronios_camada_saida()
@@ -65,11 +65,11 @@ class RedeNeural:
         return erro_total
 
 class CamadaNeuronios:
-    def __init__(self, num_neuronios, viés):
-        self.viés = viés if viés else random.random()
+    def __init__(self, num_neuronios, vies):
+        self.vies = vies if vies else random.random()
         self.neuronios = []
         for i in range(num_neuronios):
-            self.neuronios.append(Neuronio(self.viés))
+            self.neuronios.append(Neuronio(self.vies))
 
     def feed_forward(self, entradas):
         saídas = []
@@ -78,8 +78,8 @@ class CamadaNeuronios:
         return saídas
 
 class Neuronio:
-    def __init__(self, viés):
-        self.viés = viés
+    def __init__(self, vies):
+        self.vies = vies
         self.pesos = []
 
     def calcular_saída(self, entradas):
@@ -111,40 +111,44 @@ class Neuronio:
     def calcular_pd_input_total_em_relacao_ao_peso(self, index):
         return self.entradas[index]
 
+
 def ler_numero_binario_arquivo(caminho_arquivo):
     with open(caminho_arquivo, 'r') as arquivo:
         return [int(digito) for digito in arquivo.read().strip()]
-
+    
 # Ler o número binário do arquivo
-numero_binario = ler_numero_binario_arquivo("C:\Users\rafae\Desktop\backpropagation\codes\backpropandtxtfile\binary_number.txt")
-print("Número binário do arquivo:", numero_binario)
+numero_binario = ler_numero_binario_arquivo("C:/Users/rafae/Desktop/backpropagation/codes/backpropandtxtfile/binary_number.txt")
 
 # Conjuntos de treinamento para números binários de 0 a 9
 conjuntos_treino = [
-    [[0, 0, 0], [0]],  # Para o número binário "000", a saída desejada é 0
-    [[0, 0, 1], [1]],  # Para o número binário "001", a saída desejada é 1
-    [[0, 1, 0], [2]],  # Para o número binário "010", a saída desejada é 2
-    [[0, 1, 1], [3]],  # Para o número binário "011", a saída desejada é 3
-    [[1, 0, 0], [4]],  # Para o número binário "100", a saída desejada é 4
-    [[1, 0, 1], [5]],  # Para o número binário "101", a saída desejada é 5
-    [[1, 1, 0], [6]],  # Para o número binário "110", a saída desejada é 6
-    [[1, 1, 1], [7]],  # Para o número binário "111", a saída desejada é 7
+    [[0, 0, 0, 0], [0]],  # Para o número binário "000", a saída desejada é 0
+    [[0, 0, 1, 0], [1]],  # Para o número binário "001", a saída desejada é 1
+    [[0, 1, 0, 0], [2]],  # Para o número binário "010", a saída desejada é 2
+    [[0, 1, 1, 0], [3]],  # Para o número binário "011", a saída desejada é 3
+    [[1, 0, 0, 0], [4]],  # Para o número binário "100", a saída desejada é 4
+    [[1, 0, 1, 0], [5]],  # Para o número binário "101", a saída desejada é 5
+    [[1, 1, 0, 0], [6]],  # Para o número binário "110", a saída desejada é 6
+    [[1, 1, 1, 0], [7]],  # Para o número binário "111", a saída desejada é 7
     [[1, 0, 0, 0], [8]],  # Para o número binário "1000", a saída desejada é 8
     [[1, 0, 0, 1], [9]]   # Para o número binário "1001", a saída desejada é 9
 ]
 
-# Criar e treinar a rede neural
-rn = RedeNeural(9, 4, 2)
-for i in range(10000):
-    rn.treinar(numero_binario, numero_binario)
+# 4 entradas, separar os binarios em sequências de 4 em quatro, esses grupos de 4 serão
+# divididos e separados cada 1 em uma das 4 entrada
 
-# Calcular e imprimir o erro total antes e após o treinamento
-erro_total_antes = rn.calcular_erro_total(conjuntos_treino)
+# Criar e treinar a rede neural
+rn = RedeNeural(4, 4, 2)
+for i in range(10000):
+    rn.treinar( x , y)
+
+# Calcular e imprimir o erro total antes o treinamento
+
 print("Erro total antes do treinamento:", erro_total_antes)
 
-erro_total_após = rn.calcular_erro_total(conjuntos_treino)
-print("Erro total após o treinamento:", erro_total_após)
+# Calcular e imprimir o erro total após o treinamento
 
-# Deduzir o número do arquivo após o treinamento
-numero_deduzido = rn.feed_forward(numero_binario)
+print("Erro total após o treinamento:", erro_total_apos)
+
+# Deduzir o número em decimal após o treinamento
+
 print("Número deduzido do arquivo TXT após o treinamento:", numero_deduzido)

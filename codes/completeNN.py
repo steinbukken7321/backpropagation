@@ -56,17 +56,6 @@ class NeuralNetwork:
                         output_layer_weights[weight_num])
                 weight_num += 1
 
-    def inspect(self):
-        print('------')
-        print('* Inputs: {}'.format(self.num_inputs))
-        print('------')
-        print('Hidden Layer')
-        self.hidden_layer.inspect()
-        print('------')
-        print('* Output Layer')
-        self.output_layer.inspect()
-        print('------')
-
     def feed_forward(self, inputs):
         hidden_layer_outputs = self.hidden_layer.feed_forward(inputs)
         return self.output_layer.feed_forward(hidden_layer_outputs)
