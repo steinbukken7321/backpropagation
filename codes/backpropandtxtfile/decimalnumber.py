@@ -1,154 +1,108 @@
-import random
-import math
-
-class RedeNeural:
-    TAXA_APRENDIZAGEM = 0.5
-
-    def __init__(self, num_inputs, num_ocultas, num_saidas, camada_oculta=None, camada_saida=None):
-        self.num_inputs = num_inputs
-        self.num_ocultas = num_ocultas
-        self.num_saidas = num_saidas
-
-        self.camada_oculta = CamadaNeuronios(num_ocultas, camada_oculta)
-        self.camada_saida = CamadaNeuronios(num_saidas, camada_saida)
-
-        self.inicializar_pesos_entrada_para_neuronios_camada_oculta()
-        self.inicializar_pesos_neuronios_camada_oculta_para_neuronios_camada_saida()
-
-    def inicializar_pesos_entrada_para_neuronios_camada_oculta(self):
-        for h in range(len(self.camada_oculta.neuronios)):
-            for i in range(self.num_inputs):
-                self.camada_oculta.neuronios[h].pesos.append(random.random())
-
-    def inicializar_pesos_neuronios_camada_oculta_para_neuronios_camada_saida(self):
-        for o in range(len(self.camada_saida.neuronios)):
-            for h in range(len(self.camada_oculta.neuronios)):
-                self.camada_saida.neuronios[o].pesos.append(random.random())
-
-    def feed_forward(self, entradas):
-        saídas_camada_oculta = self.camada_oculta.feed_forward(entradas)
-        return self.camada_saida.feed_forward(saídas_camada_oculta)
-
-    def treinar(self, entradas_treino, saídas_treino):
-        self.feed_forward(entradas_treino)
-
-        pd_erros_em_relacao_ao_input_total_neuronio_saida = [0] * self.num_saidas
-        for o in range(self.num_saidas):
-            pd_erros_em_relacao_ao_input_total_neuronio_saida[o] = self.camada_saida.neuronios[o].calcular_pd_erro_em_relacao_ao_input_total(
-                saídas_treino[o])
-
-        pd_erros_em_relacao_ao_input_total_neuronio_oculto = [0] * self.num_ocultas
-        for h in range(self.num_ocultas):
-            d_erro_em_relacao_à_saída_neuronio_oculto = 0
-            for o in range(self.num_saidas):
-                d_erro_em_relacao_à_saída_neuronio_oculto += pd_erros_em_relacao_ao_input_total_neuronio_saida[o] * self.camada_saida.neuronios[o].pesos[h]
-
-            pd_erros_em_relacao_ao_input_total_neuronio_oculto[h] = d_erro_em_relacao_à_saída_neuronio_oculto * self.camada_oculta.neuronios[h].calcular_pd_input_total_em_relacao_ao_input()
-
-        for o in range(self.num_saidas):
-            for w_ho in range(len(self.camada_saida.neuronios[o].pesos)):
-                pd_erro_em_relacao_ao_peso = pd_erros_em_relacao_ao_input_total_neuronio_saida[o] * self.camada_saida.neuronios[o].calcular_pd_input_total_em_relacao_ao_peso(w_ho)
-                self.camada_saida.neuronios[o].pesos[w_ho] -= self.TAXA_APRENDIZAGEM * pd_erro_em_relacao_ao_peso
-
-        for h in range(self.num_ocultas):
-            for w_ih in range(len(self.camada_oculta.neuronios[h].pesos)):
-                pd_erro_em_relacao_ao_peso = pd_erros_em_relacao_ao_input_total_neuronio_oculto[h] * self.camada_oculta.neuronios[h].calcular_pd_input_total_em_relacao_ao_peso(w_ih)
-                self.camada_oculta.neuronios[h].pesos[w_ih] -= self.TAXA_APRENDIZAGEM * pd_erro_em_relacao_ao_peso
-
-    def calcular_erro_total(self, conjuntos_treino):
-        erro_total = 0
-        for t in range(len(conjuntos_treino)):
-            entradas_treino, saídas_treino = conjuntos_treino[t]
-            self.feed_forward(entradas_treino)
-            for o in range(len(saídas_treino)):
-                erro_total += self.camada_saida.neuronios[o].calcular_erro(saídas_treino[o])
-        return erro_total
-
-class CamadaNeuronios:
-    def __init__(self, num_neuronios, vies):
-        self.vies = vies if vies else random.random()
-        self.neuronios = []
-        for i in range(num_neuronios):
-            self.neuronios.append(Neuronio(self.vies))
-
-    def feed_forward(self, entradas):
-        saídas = []
-        for neuronio in self.neuronios:
-            saídas.append(neuronio.calcular_saída(entradas))
-        return saídas
-
-class Neuronio:
-    def __init__(self, vies):
-        self.vies = vies
-        self.pesos = []
-
-    def calcular_saída(self, entradas):
-        self.entradas = entradas + [0] * (9 - len(entradas))  # Adicionando zeros para completar 9 entradas
-        self.saída = self.ativação(self.calcular_input_total())
-        return self.saída
-
-    def calcular_input_total(self):
-        total = 0
-        for i in range(len(self.entradas)):
-            total += self.entradas[i] * self.pesos[i]
-        return total + self.viés
-
-    def ativação(self, input_total):
-        return 1 / (1 + math.exp(-input_total))
-
-    def calcular_pd_erro_em_relacao_ao_input_total(self, saída_desejada):
-        return self.calcular_pd_erro_em_relacao_à_saída(saída_desejada) * self.calcular_pd_input_total_em_relacao_ao_input()
-
-    def calcular_erro(self, saída_desejada):
-        return 0.5 * (saída_desejada - self.saída) ** 2
-
-    def calcular_pd_erro_em_relacao_à_saída(self, saída_desejada):
-        return -(saída_desejada - self.saída)
-
-    def calcular_pd_input_total_em_relacao_ao_input(self):
-        return self.saída * (1 - self.saída)
-
-    def calcular_pd_input_total_em_relacao_ao_peso(self, index):
-        return self.entradas[index]
+import numpy as np
 
 
-def ler_numero_binario_arquivo(caminho_arquivo):
-    with open(caminho_arquivo, 'r') as arquivo:
-        return [int(digito) for digito in arquivo.read().strip()]
-    
-# Ler o número binário do arquivo
-numero_binario = ler_numero_binario_arquivo("C:/Users/rafae/Desktop/backpropagation/codes/backpropandtxtfile/binary_number.txt")
+class NeuralNetwork:
+    def __init__(self, input_size, hidden_size, output_size):
+        self.input_size = input_size
+        self.hidden_size = hidden_size
+        self.output_size = output_size
 
-# Conjuntos de treinamento para números binários de 0 a 9
-conjuntos_treino = [
-    [[0, 0, 0, 0], [0]],  # Para o número binário "000", a saída desejada é 0
-    [[0, 0, 1, 0], [1]],  # Para o número binário "001", a saída desejada é 1
-    [[0, 1, 0, 0], [2]],  # Para o número binário "010", a saída desejada é 2
-    [[0, 1, 1, 0], [3]],  # Para o número binário "011", a saída desejada é 3
-    [[1, 0, 0, 0], [4]],  # Para o número binário "100", a saída desejada é 4
-    [[1, 0, 1, 0], [5]],  # Para o número binário "101", a saída desejada é 5
-    [[1, 1, 0, 0], [6]],  # Para o número binário "110", a saída desejada é 6
-    [[1, 1, 1, 0], [7]],  # Para o número binário "111", a saída desejada é 7
-    [[1, 0, 0, 0], [8]],  # Para o número binário "1000", a saída desejada é 8
-    [[1, 0, 0, 1], [9]]   # Para o número binário "1001", a saída desejada é 9
-]
+        # Inicialização dos pesos e viés
+        self.weights_input_hidden = np.random.rand(
+            self.input_size, self.hidden_size)
+        self.bias_input_hidden = np.random.rand(1, self.hidden_size)
+        self.weights_hidden_output = np.random.rand(
+            self.hidden_size, self.output_size)
+        self.bias_hidden_output = np.random.rand(1, self.output_size)
 
-# 4 entradas, separar os binarios em sequências de 4 em quatro, esses grupos de 4 serão
-# divididos e separados cada 1 em uma das 4 entrada
+    def relu(self, x):
+        return np.maximum(0, x)
+
+    def relu_derivative(self, x):
+        return np.where(x > 0, 1, 0)
+
+    def feedforward(self, inputs):
+        # Camada de entrada para camada oculta
+        self.hidden_sum = np.dot(
+            inputs, self.weights_input_hidden) + self.bias_input_hidden
+        self.hidden_output = self.relu(self.hidden_sum)
+
+        # Camada oculta para camada de saída
+        self.output_sum = np.dot(
+            self.hidden_output, self.weights_hidden_output) + self.bias_hidden_output
+        self.output = self.relu(self.output_sum)
+
+        return self.output
+
+    def backward(self, inputs, targets, learning_rate):
+        # Cálculo do erro
+        self.error = targets - self.output
+
+        # Cálculo dos gradientes para a camada de saída
+        delta_output = self.error * self.relu_derivative(self.output)
+
+        # Atualização dos pesos e viés da camada de saída
+        self.weights_hidden_output += np.dot(
+            self.hidden_output.T, delta_output) * learning_rate
+        self.bias_hidden_output += np.sum(delta_output,
+                                          axis=0, keepdims=True) * learning_rate
+
+        # Cálculo dos gradientes para a camada oculta
+        delta_hidden = np.dot(delta_output, self.weights_hidden_output.T) * \
+            self.relu_derivative(self.hidden_output)
+
+        # Atualização dos pesos e viés da camada oculta
+        self.weights_input_hidden += np.dot(inputs.T,
+                                            delta_hidden) * learning_rate
+        self.bias_input_hidden += np.sum(delta_hidden,
+                                         axis=0, keepdims=True) * learning_rate
+
+    def train(self, inputs, targets, learning_rate, epochs):
+        for epoch in range(epochs):
+            output = self.feedforward(inputs)
+            self.backward(inputs, targets, learning_rate)
+            loss = np.mean(np.square(targets - output))
+            if epoch % 10 == 0:
+                print(f'Epoch {epoch}, Total Error: {loss}')
+
+# Função para converter um número binário para um número decimal
+
+
+def binary_to_decimal(binary_number):
+    decimal_number = 0
+    for i, bit in enumerate(reversed(binary_number)):
+        decimal_number += int(bit) * (2 ** i)
+    return decimal_number
+
+# Função para converter um número decimal para sua representação binária
+
+
+def decimal_to_binary(decimal_number, num_bits):
+    binary_string = bin(decimal_number)[2:]
+    binary_string = '0' * (num_bits - len(binary_string)) + binary_string
+    return binary_string
+
+
+# Exemplo de uso
+input_size = 4
+hidden_size = 10
+output_size = 1
+
+# Dados de entrada e saída
+# Exemplo de números binários de comprimentos variáveis
+binary_numbers = ['0101', '0011', '1010', '1111', '0000', '0001']
+max_length = max(len(num) for num in binary_numbers)
+inputs = np.array([[int(bit) for bit in num.zfill(max_length)]
+                  for num in binary_numbers])
+targets = np.array([[binary_to_decimal(num)] for num in binary_numbers])
 
 # Criar e treinar a rede neural
-rn = RedeNeural(4, 4, 2)
-for i in range(10000):
-    rn.treinar( x , y)
+nn = NeuralNetwork(input_size, hidden_size, output_size)
+nn.train(inputs, targets, learning_rate=0.01, epochs=10000)
 
-# Calcular e imprimir o erro total antes o treinamento
-
-print("Erro total antes do treinamento:", erro_total_antes)
-
-# Calcular e imprimir o erro total após o treinamento
-
-print("Erro total após o treinamento:", erro_total_apos)
-
-# Deduzir o número em decimal após o treinamento
-
-print("Número deduzido do arquivo TXT após o treinamento:", numero_deduzido)
+# Avaliação da rede neural
+for i, binary_number in enumerate(binary_numbers):
+    input_binary = np.array([int(bit) for bit in binary_number]).reshape(1, -1)
+    output_decimal = nn.feedforward(input_binary)
+    print(f'Entrada binária: {binary_number}, Saída decimal: {
+          output_decimal[0, 0]}')
